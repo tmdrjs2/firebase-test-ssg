@@ -1,0 +1,65 @@
+/* InquiryPage.css */
+.inquiry-main {
+    padding: 20px 10%; /* 랜딩페이지 히어로 섹션과 비슷한 간격 */
+    margin-top: 0; /* 헤더와 바로 붙도록 */
+    text-align: center;
+  }
+  
+  .inquiry-form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .inquiry-form input,
+  .inquiry-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .inquiry-form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .inquiry-form button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .inquiry-form button:hover {
+    background-color: #43a047;
+  }
+  
+  .success-message {
+    margin-top: 15px;
+    color: #4caf50;
+    font-weight: 500;
+  }
+  
+  .back-home-btn {
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .back-home-btn:hover {
+    background-color: #357ab8;
+  }
+  

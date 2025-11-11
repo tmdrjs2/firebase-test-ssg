@@ -1,0 +1,152 @@
+/* AdminInquiriesPage.css */
+
+.admin-page {
+    padding: 40px;
+    background-color: #f0f2f5; /* 배경색: 연한 회색 */
+    min-height: 100vh;
+}
+
+.admin-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 상단 헤더 및 버튼 그룹 */
+.admin-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* ⭐️ 핵심: 수직 중앙 정렬 보장 ⭐️ */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    
+    
+}
+
+.admin-container h1 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+.admin-container p {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+/* 버튼 그룹 정렬 */
+.admin-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.delete-all, .back-home {
+    border: 0px;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+/* 전체 삭제 버튼 스타일 */
+.delete-all {
+    background-color: #e74c3c; /* 빨간색 */
+    color: white;
+}
+
+.delete-all:hover {
+    background-color: #c0392b; /* 진한 빨간색 */
+}
+
+/* 홈으로 돌아가기 버튼 스타일 */
+.back-home {
+    background-color: #3498db; /* 파란색 */
+    color: white;
+}
+
+.back-home:hover {
+    background-color: #2980b9;
+}
+
+/* 문의 목록 컨테이너 */
+.inquiry-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --------------------
+ * 문의 카드 스타일
+ * -------------------- */
+.inquiry-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.inquiry-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f9fc;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header strong {
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.inquiry-date {
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin-left: 10px;
+}
+
+.card-body {
+    padding: 20px;
+    line-height: 1.6;
+    color: #444;
+    white-space: pre-wrap;
+}
+
+.card-body p {
+    margin: 0;
+}
+
+.card-footer {
+    padding: 15px 20px;
+    background-color: #fcfcfc;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+/* 개별 삭제 버튼 스타일 */
+.delete-btn {
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}

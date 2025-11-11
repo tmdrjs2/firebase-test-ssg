@@ -1,0 +1,159 @@
+/* MainPage.css */
+.main-page {
+  font-family: 'Pretendard', sans-serif;
+  color: #333;
+  padding: 20px;
+  background: linear-gradient(to bottom, #f0f9ff, #e0f7fa);
+  min-height: 100vh;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00bcd4;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+.main-header h1 {
+  font-size: 1.8rem;
+}
+
+.main-header button {
+  background: #ffdd57;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.main-header button:hover {
+  transform: scale(1.1);
+  background: #ffc107;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 300px;
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  width: 150px;
+  height: 140%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #00796b;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.card button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #00bcd4;
+  color: white;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+}
+
+input[type="number"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  width: 60px;
+  font-weight: 600;
+  text-align: center;
+}
+/* 대시보드 */
+.dashboard {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  margin-top: 40px;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background: #eee;
+  border-radius: 12px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00bcd4, #00acc1);
+  width: 0;
+  border-radius: 12px 0 0 12px;
+  transition: width 0.5s ease-in-out;
+}
+
+.dashboard p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.dashboard {
+  padding: 40px; /* 기존보다 조금 더 여유 있게 */
+  max-width: 900px; /* 카드 넓이 조금 증가 */
+  margin: 30px auto; /* 화면 중앙 정렬 */
+  text-align: center;
+}
+
+.dashboard h2 {
+  font-size: 2rem; /* 제목 더 크게 */
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 35px; /* 막대 더 두껍게 */
+  border-radius: 18px;
+}
+
+.progress {
+  height: 100%;
+}
+  
+.dashboard p {
+  font-size: 1.2rem; /* 글자도 조금 키움 */
+  margin: 8px 0;
+}

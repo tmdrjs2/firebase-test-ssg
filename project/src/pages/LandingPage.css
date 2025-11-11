@@ -1,0 +1,180 @@
+/* 기존 랜딩페이지 기본 스타일 */
+.landing-page {
+  font-family: 'Pretendard', sans-serif;
+  color: #333;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background-color: #a2dff7; /* 하늘색 배경 */
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.header-buttons button {
+  margin-left: 15px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* 히어로 섹션 */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(to bottom, #fff8b5, #a2dff7); 
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.cta-buttons button {
+  margin: 0 10px;
+  padding: 15px 40px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.cta-buttons button:first-child {
+  background-color: #ffdd57; /* 회원가입 강조 */
+  color: #333;
+}
+
+.cta-buttons button:last-child {
+  background-color: #333;
+  color: #fff;
+}
+
+/* ------------------------- */
+/* 리뷰 섹션 스타일 */
+/* ------------------------- */
+
+/* 리뷰 전체 래퍼 */
+.reviews-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 10%;
+  flex-wrap: wrap;
+}
+
+/* 리뷰 박스 */
+.reviews-box {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* 리뷰 제목 */
+.reviews-box h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* 리뷰 카드 리스트 */
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 한 줄에 2개씩 나오도록 카드 너비 조정 */
+.review-card {
+  background-color: #fefefe;
+  border-radius: 15px;
+  padding: 20px 15px;
+  width: calc(50% - 10px); /* 한 줄에 2개 */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.review-card strong {
+  font-size: 1rem;
+  color: #333;
+}
+
+.review-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* 모바일 화면에서는 한 줄 1개로 */
+@media (max-width: 600px) {
+  .review-card {
+    width: 100%;
+  }
+}
+
+/* ------------------------- */
+/* 토글 애니메이션 & 버튼 */
+/* ------------------------- */
+
+/* 토글 애니메이션 컨테이너 */
+.review-list-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+/* 열렸을 때 */
+.review-list-container.open {
+  max-height: 1000px; /* 충분히 큰 값 */
+  padding-top: 20px;
+}
+
+/* 토글 버튼 */
+.toggle-reviews-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.toggle-reviews-btn:hover {
+  background-color: #357ab8;
+}

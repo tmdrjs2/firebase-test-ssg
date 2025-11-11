@@ -1,0 +1,60 @@
+.signup-page {
+  background-color: #fff8b5; /* 밝은 노란색 배경 */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.signup-form {
+  background-color: white;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.signup-form label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.signup-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.signup-form input:focus {
+  border-color: #333;
+}
+
+.signup-form button {
+  margin-top: 25px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+  background-color: #555;
+}

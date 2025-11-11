@@ -1,0 +1,113 @@
+/* 전체 페이지 컨텐츠 가운데 정렬 */
+.shop-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  /* 상점 헤더 가운데 정렬 */
+  .shop-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .shop-header h1 {
+    display: inline-block;
+    font-size: 2.2rem;
+    color: #000000; /* 원하는 색상 */
+    margin: 0;
+  }
+  
+  /* 상점 카드들을 가로로 정렬하고, 전체를 가운데 정렬 */
+  .shop-content {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px; /* 최대 너비 */
+  }
+  
+  /* 상점 카드 기본 스타일 */
+  .shop-card {
+    background-color: #fefefe;
+    border-radius: 15px;
+    padding: 25px 20px;
+    width: 320px;
+    height: 450px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* 카드 호버 효과 */
+  .shop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  }
+  
+  /* 제목 */
+  .shop-card h2 {
+    color: #00796b;
+    margin-bottom: 15px;
+  }
+  
+  /* 기능 목록 기본 스타일 */
+  .shop-card ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .shop-card ol li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* 25$ 유료 기능에서 4,5번 항목만 굵게 */
+  .shop-card:nth-child(2) ol li:nth-child(4),
+  .shop-card:nth-child(2) ol li:nth-child(5) {
+    font-weight: 700;
+  }
+  
+  /* 50$ 유료 기능에서 4,5,6,7번 항목만 굵게 */
+  .shop-card:nth-child(3) ol li:nth-child(4),
+  .shop-card:nth-child(3) ol li:nth-child(5),
+  .shop-card:nth-child(3) ol li:nth-child(6),
+  .shop-card:nth-child(3) ol li:nth-child(7) {
+    font-weight: 700;
+  }
+  
+  /* 버튼 */
+  .shop-card button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffdd57;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .shop-card button:hover {
+    background-color: #ffd933;
+    transform: scale(1.05);
+  }
+  
+  /* 반응형 */
+  @media (max-width: 1024px) {
+    .shop-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .shop-card {
+      width: 90%;
+    }
+  }
+  
