@@ -1,31 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import './AdminInquiriesPage.css'; 
+import './AdminInquiriesPage.css';
 import { useNavigate } from 'react-router-dom';
+import { db, collection, getDocs, deleteDoc, doc, query, orderBy } from '../firebase';
 
 function AdminInquiriesPage() {
   const navigate = useNavigate();
   const [inquiries, setInquiries] = useState([]);
-
-  // 1. 문의 데이터 불러오기
+  
+  // 1. Firestore에서 문의 데이터 불러오기
   useEffect(() => {
-    const savedInquiries = localStorage.getItem('inquiries');
-    if (savedInquiries) {
-      setInquiries(JSON.parse(savedInquiries));
-    }
+    const fetchInquiries = async () => {
+      try {
+        const q = query(collection(db, 'inquiries')); // orderBy 제거
+        const querySnapshot = await getDocs(q);
+        const inquiriesData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setInquiries(inquiriesData);
+      } catch (error) {
+        console.error("문의 데이터를 불러오는 데 실패했습니다.", error);
+      }
+    };
+
+    fetchInquiries();
   }, []);
 
-  // 2. 개별 문의 삭제 기능
-  const handleDelete = (id) => {
+  // 2. 개별 문의 삭제 기능 (Firestore에서 삭제)
+  const handleDelete = async (id) => {
     if (!window.confirm('정말 이 문의를 삭제하시겠습니까?')) {
       return;
     }
-    const updatedInquiries = inquiries.filter(item => item.id !== id);
-    setInquiries(updatedInquiries);
-    localStorage.setItem('inquiries', JSON.stringify(updatedInquiries));
+    try {
+      const inquiryDoc = doc(db, 'inquiries', id);
+      await deleteDoc(inquiryDoc);
+      setInquiries(inquiries.filter(item => item.id !== id));
+      alert('문의가 삭제되었습니다.');
+    } catch (error) {
+      console.error("문의 삭제 중 오류가 발생했습니다.", error);
+      alert('삭제에 실패했습니다.');
+    }
   };
-  
-  // ⭐️ 3. 전체 문의 삭제 기능 ⭐️
-  const handleDeleteAll = () => {
+
+  // 3. 전체 문의 삭제 기능 (Firestore에서 전체 삭제)
+  const handleDeleteAll = async () => {
     if (inquiries.length === 0) {
       alert('삭제할 문의가 없습니다.');
       return;
@@ -36,22 +54,25 @@ function AdminInquiriesPage() {
       return;
     }
     
-    // 상태 및 localStorage 초기화
-    setInquiries([]);
-    localStorage.removeItem('inquiries');
-    alert('모든 문의가 성공적으로 삭제되었습니다.');
+    try {
+      for (const inquiry of inquiries) {
+        const inquiryDoc = doc(db, 'inquiries', inquiry.id);
+        await deleteDoc(inquiryDoc);
+      }
+      setInquiries([]);
+      alert('모든 문의가 성공적으로 삭제되었습니다.');
+    } catch (error) {
+      console.error("전체 삭제 중 오류가 발생했습니다.", error);
+      alert('전체 삭제에 실패했습니다.');
+    }
   };
-
 
   return (
     <div className="admin-page">
       <div className="admin-container">
-        
-        {/* ⭐️ 헤더 영역: 버튼 배치를 위해 수정 ⭐️ */}
         <div className="admin-header-flex">
             <h1>접수된 문의 목록 📋</h1>
             <div className="admin-actions">
-                {/* 전체 삭제 버튼 (문의가 있을 때만 보이도록 조건 추가) */}
                 {inquiries.length > 0 && (
                     <button 
                         onClick={handleDeleteAll} 
@@ -61,7 +82,6 @@ function AdminInquiriesPage() {
                     </button>
                 )}
                 
-                {/* 홈으로 돌아가기 버튼 */}
                 <button 
                     onClick={() => navigate('/')} 
                     className="back-home"

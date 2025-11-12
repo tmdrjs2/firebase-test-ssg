@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth"; // Import the Firebase Authentication module
-import { getFirestore } from "firebase/firestore"; // ⭐️ 1. Firestore import
+import { getFirestore, collection, getDocs, deleteDoc, doc, query, orderBy } from 'firebase/firestore';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -26,4 +26,5 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 // ⭐️ 3. auth와 db를 함께 export
-export { auth, db };
+
+export { auth, db, collection, getDocs, deleteDoc, doc, query, orderBy };
